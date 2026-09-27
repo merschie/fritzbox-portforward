@@ -1,0 +1,22 @@
+services:
+  portforward:
+    image: merschie/fritzbox-portforward:1.0.0
+    build: .
+    container_name: portforward
+    network_mode: host
+    restart: unless-stopped
+    stop_grace_period: 30s
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./data:/data
+    environment:
+      - INTERVAL=300
+      - DRY_RUN=true              # erst Logs pruefen, dann auf false stellen
+      - CLEANUP_ON_EXIT=true
+      # - LAN_IP=192.168.x.y      # optional, sonst per UPnP ermittelt
+      # - LEASE_DURATION=0        # 0 = unbegrenzt; >0 = Sekunden, wird bei jedem Abgleich erneuert
+      # pfSense-API-Bruecke (z. B. fuer Palisade), Key in .env (siehe .env.example)
+      - BRIDGE_ENABLED=false
+      - BRIDGE_LISTEN=127.0.0.2
+      - BRIDGE_PORT=443
+      - BRIDGE_API_KEY=${BRIDGE_API_KEY:-}
