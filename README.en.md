@@ -106,3 +106,7 @@ Otherwise the FRITZ!Box rejects new forwards with "Action not authorized" (shown
 ```sh
 docker run --rm merschie/fritzbox-portforward python3 /app/test_parse.py
 ```
+
+## License
+
+MIT, see [LICENSE](LICENSE).

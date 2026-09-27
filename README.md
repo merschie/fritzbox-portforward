@@ -86,3 +86,7 @@ Nach Änderungen an `docker-compose.yml` (z. B. `DRY_RUN=false`) erneut `./compo
 UPnP muss aktiv sein und für den Server muss unter *Internet → Freigaben → Gerät bearbeiten*
 „Selbstständige Portfreigaben erlauben“ gesetzt sein. Sonst lehnt die Fritzbox das Anlegen ab
 (Fehler im Log).
+
+## Lizenz
+
+MIT, siehe [LICENSE](LICENSE).
